@@ -1,101 +1,79 @@
-(function() {
-
-	var totalExemption = function() {
-		
-	}
-
-})();
-
-function totalExemption(){
+//Gross Income
+var grossIncome = document.getElementById("").value;
+//Basic Personal Exemption
+var BPE = 50000;
+//Exemption Per Dependent
+var perDependent=25000;
+//Additional Exemption Radio Button
+var AERadio = document.getElementById("").value;
+//Additional Exemption
+var AE = document.getElementById("").value;
+//Premium on Health and/or Hospitalization Insurance
+var PHHI = document.getElementById("").value;
+//Taxable Income
+var TI = document.getElementById("").value;
 	
-	//Basi Personal Exemption
-	var BPE=$("#").value;
-	//Additional Exemption
-	var AE=$("#").value;
-	//Health and/or Hospitalizations Insurance
-	var PHHI=$("#").value; 
-	//Earning Compensation or Earning Business/Professional Income
-	var IncomeType=$("#").value; 
-	// Cost of Sales or Services
-	var CSS=$("#").value; 
-	//Operating Expenses
-	var OE=$("#").value; 
-	//Optional Standard Deduction
-	var OSD=$("#").value; 
-	//Type or Earning Business/Professional Income
-	var EBP=$("#").value; 
-	//Basic Exemption. Applicable to all
-	var basicExemption=BPE+AE+PHHI; 
-	//Business Exemption. with supporting documents like RECEIPT
-	var businessExemption1=CSS+OE+basicExemption; 
-	//Business Exemption. without supporting documents
-	var businessExemption2=OSD+basicExemption; 
-	if (IncomeType==1) {
-		return basicExemption;
-	}
-	else{
-		if (EBP==1) {
-			return businessExemption1;
-		}
-		else{
-			return businessExemption2;
-		}
-	}
+//Computation of Additional Exemption
+function addExempt(x, y){
+	var val = x*y;
+	return val;
 }
 
-function taxableIncome(grossIncome, exemption){
-	var x = grossIncome - exemption;
-	return x;
+//Computation of Total Exemption
+function totalExempt(x, y, z){
+	var	val = x+y+z;
+	return val;
 }
 
-function taxDue(){
-	var taxInc=taxableIncome();
-	var x;
-	switch (taxInc) {
-	case (taxInc>0 && taxInc<=10000):
-		x=taxInc*0.05;
-		return x;
+//Computation of Tax Liability
+function taxLiab(x){
+	var val;
+	switch (x) {
+	case (x>0 && x<=10000):
+		val = x*0.05;
+		return val;
 		break;
 
-	case (taxInc>10000 && taxInc<=30000):
-		x=500+((taxInc-10000)*0.1);
-		return x;
+	case (x>10000 && x<=30000):
+		val = 500+((x-10000)*0.1);
+		return val;
 		break;
 
-	case (taxInc>30000 && taxInc<=70000):
-		x=2500+((taxInc-30000)*0.15);
-		return x;
+	case (x>30000 && x<=70000):
+		val = 2500+((x-30000)*0.15);
+		return val;
 		break;
 
-	case (taxInc>70000 && taxInc<=140000):
-		x=8500+((taxInc-70000)*0.2);
-		return x;
+	case (x>70000 && x<=140000):
+		val = 8500+((x-70000)*0.2);
+		return val;
 		break;
 
-	case (taxInc>140000 && taxInc<=250000):
-		x=22500+((taxInc-140000)*0.25);
-		return x;
+	case (x>140000 && x<=250000):
+		val = 22500+((x-140000)*0.25);
+		return val;
 		break;
 
-	case (taxInc>250000 && taxInc<=500000):
-		x=50000+((taxInc-240000)*0.3);
-		return x;
+	case (x>250000 && x<=500000):
+		val = 50000+((x-240000)*0.3);
+		return val;
 		break;
 	
 	default:
-		x=125000+((taxInc-500000)*0.32);
-		return x;
+		val = 125000+((x-500000)*0.32);
+		return val;
 		break;
-}
-}
-
-function taxLiab(){
-	var due=taxDue();
-	var taxCredit=$("#").value;
-	var x=due-taxCredit;
-	return x;
+	}
 }
 
+//Auto-update fields
 function update(){
-	taxLiab();
+	//Additional Exemption
+	document.getElementById('AE').value = addExempt(perDependent, AERadio);
+
+	//Taxable Income
+	document.getElementById('TI').value = grossIncome - totalExempt(BPE, AE, PHHI);
+
+	//Tax Liability
+	document.getElementById('TL').value = taxLiab(TI);
 }
