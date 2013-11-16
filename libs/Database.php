@@ -1,4 +1,6 @@
 <?php
+include 'conf.php';
+
 /**
  * KabantayNgBayan: OpenData
  *
@@ -13,7 +15,7 @@
 //namespace KabantayNgBayan\Database;
 
 /**
- * S3 Uploader
+ * Amazon S3 Uploader
  *
  * @category Government
  * @package  KabantayNgBayan
@@ -59,82 +61,84 @@ class Database
         }
     }
 
-    public function insertDepartment($data)
+    public function insertSector($data)
     {
-        $query = "INSERT INTO departments (name, budget) VALUES ('" .
-            $data['name'] . "', " . $data['budget'] . ")";
+        $query = "INSERT INTO sectors (name, budget, percent) VALUES ('" .
+            $data['name'] . "', " . $data['budget'] . ", " . $data['budget']
+            . ")";
 
         return $this->_mysqli->query($query);
     }
 
-    public function updateDepartment($data)
+    public function updateSector($data)
     {
-        $query = "UPDATE departments set name = '" . $data['name'] . "',
-            budget = '" . $data['budget'] . "' WHERE id = '" .
+        $query = "UPDATE sectors set name = '" . $data['name'] . "',
+            budget = '" . $data['budget'] . "', percent = '" .
+            $data['percent'] . "' WHERE id = '" .
             $data['id'] . "'";
 
         return $this->_mysqli->query($query);
     }
 
-    public function getDepartment($id)
+    public function getSector($id)
     {
-        $query = "SELECT id, name, budget from departments WHERE id = '" . $id
-            . "'";
+        $query = "SELECT * from sectors WHERE id = '" . $id . "'";
 
         $result = $this->_mysqli->query($query, MYSQLI_USE_RESULT);
 
         return $result->fetch_assoc();
     }
 
-    public function getAllDepartments()
+    public function getAllSectors()
     {
-        $query = "SELECT id, name, budget from departments";
+        $query = "SELECT * from sectors";
 
         $result = $this->_mysqli->query($query, MYSQLI_USE_RESULT);
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function insertUserDeptBudget($data)
+    public function insertUserSectorBudget($data)
     {
-        $query = "INSERT INTO user_dept_budgets (fb_id, email, full_name,
-            department_id, budget, name, notes, group_id) VALUES
-            ('".$data['fb_id']."', '".$data['email']."', '".
-                $data['full_name']."', '".$data['department_id']."', '".
-                $data['budget']."', '".$data['name']."', '".$data['notes'].
-                "', '" . "', '".$data['group_id']."')";
+        $query = "INSERT INTO user_sector_budgets (fb_id, email, full_name,
+            budget, name, notes) VALUES
+            ('".$data['fb_id']."', '".
+                $data['email']."', '".
+                $data['full_name']."', '".
+                $data['budget']."', '".
+                $data['name']."', '".
+                $data['notes'].
+            "')";
 
         return $this->_mysqli->query($query);
     }
 
-    public function updateUserDeptBudget($data)
+    public function updateUserSectorBudget($data)
     {
-        $query = "UPDATE user_dept_budgets set fb_id = '" . $data['fb_id'] . "',
+        $query = "UPDATE user_sector_budgets set fb_id = '" . $data['fb_id'] . "',
             email = '" . $data['email'] . "',
             full_name = '" . $data['full_name'] . "',
-            department_id = '" . $data['department_id'] . "',
             budget = '" . $data['budget'] . "',
             name = '" . $data['name'] . "',
-            notes = '" . $data['notes'] .
-            "', group_id = '" . $data['group_id'] . "'
+            notes = '" . $data['notes'] ."'
             " . "' WHERE id = '" .
             $data['id'] . "'";
 
         return $this->_mysqli->query($query);
     }
 
-    public function getUserDeptBudget($id)
+    public function getUserSectorBudget($id)
     {
-        $query = "SELECT * from user_dept_budgets WHERE id = '" . $id . "'";
+        $query = "SELECT * from user_sector_budgets WHERE id = '" . $id . "'";
 
         $result = $this->_mysqli->query($query, MYSQLI_USE_RESULT);
 
         return $result->fetch_assoc();
     }
 
-    public function getAllUserDeptBudgets()
+    public function getAllUserSectorBudgets()
     {
-        $query = "SELECT * from user_dept_budgets";
+        $query = "SELECT * from user_sector_budgets";
 
         $result = $this->_mysqli->query($query, MYSQLI_USE_RESULT);
 
@@ -229,6 +233,17 @@ class Database
     public function getAllRatings()
     {
         $query = "SELECT * from ratings";
+
+        $result = $this->_mysqli->query($query, MYSQLI_USE_RESULT);
+
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    //
+    public function getUserSectorBudgets($fb_id)
+    {
+        $query = "SELECT * from user_sector_budgets WHERE fb_id = '" .
+            $fb_id . "'";
 
         $result = $this->_mysqli->query($query, MYSQLI_USE_RESULT);
 
