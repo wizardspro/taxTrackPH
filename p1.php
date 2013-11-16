@@ -15,6 +15,8 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js">
       </script>
     <![endif]-->
+
+
   </head>
   <body>
 
@@ -24,7 +26,7 @@
         <br>
 
         <fieldset>
-            <legend>Earning Compensation</legend>
+            <legend id="form_legend">Earning Compensation</legend>
             <div class="earning_compensation">
                 <label for="basic_personal_excemption">
                     Basic Personal Excemption</label>
@@ -84,9 +86,18 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="http://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files
     as needed -->
     <script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/taxCalcFunc.js"></script>
+
+    <script type="text/javascript">
+    $('#tax_compute').change(function() {
+        update();
+    });
+
+
+    </script>    
   </body>
 </html>
