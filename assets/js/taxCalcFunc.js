@@ -1,16 +1,35 @@
+(function() {
+
+	var totalExemption = function() {
+		
+	}
+
+})();
+
 function totalExemption(){
 	
-	var BPE=document.getElementById().value; //Basi Personal Exemption
-	var AE=document.getElementById().value;	//Additional Exemption
-	var PHHI=document.getElementById().value; //Health and/or Hospitalizations Insurance
-	var IncomeType=document.getElementById().value; //Earning Compensation or Earning Business/Professional Income
-	var CSS=document.getElementById().value; // Cost of Sales or Services
-	var OE=document.getElementById().value; //Operating Expenses
-	var OSD=document.getElementById().value; //Optional Standard Deduction
-	var EBP=document.getElementById().value; //Type or Earning Business/Professional Income
-	var basicExemption=BPE+AE+PHHI; //Basic Exemption. Applicable to all
-	var businessExemption1=CSS+OE+basicExemption; //Business Exemption. with supporting documents like RECEIPT
-	var businessExemption2=OSD+basicExemption; //Business Exemption. without supporting documents
+	//Basi Personal Exemption
+	var BPE=$("#").value;
+	//Additional Exemption
+	var AE=$("#").value;
+	//Health and/or Hospitalizations Insurance
+	var PHHI=$("#").value; 
+	//Earning Compensation or Earning Business/Professional Income
+	var IncomeType=$("#").value; 
+	// Cost of Sales or Services
+	var CSS=$("#").value; 
+	//Operating Expenses
+	var OE=$("#").value; 
+	//Optional Standard Deduction
+	var OSD=$("#").value; 
+	//Type or Earning Business/Professional Income
+	var EBP=$("#").value; 
+	//Basic Exemption. Applicable to all
+	var basicExemption=BPE+AE+PHHI; 
+	//Business Exemption. with supporting documents like RECEIPT
+	var businessExemption1=CSS+OE+basicExemption; 
+	//Business Exemption. without supporting documents
+	var businessExemption2=OSD+basicExemption; 
 	if (IncomeType==1) {
 		return basicExemption;
 	}
@@ -24,10 +43,8 @@ function totalExemption(){
 	}
 }
 
-function taxableIncome(){
-	var grossIncome=document.getElementById().value;
-	var	exemption=totalExemption();
-	var x=grossIncome-exemption;
+function taxableIncome(grossIncome, exemption){
+	var x = grossIncome - exemption;
 	return x;
 }
 
@@ -74,7 +91,7 @@ function taxDue(){
 
 function taxLiab(){
 	var due=taxDue();
-	var taxCredit=document.getElementById().value;
+	var taxCredit=$("#").value;
 	var x=due-taxCredit;
 	return x;
 }
