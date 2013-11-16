@@ -249,4 +249,26 @@ class Database
 
         return $result->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function getUserInfo()
+    {
+        $user['username'] = 'testuser';
+        $user['password'] = 'password';
+        $user['full_name'] = 'Juan Dela Cruz';
+        $user['email'] = 'juandelacruz@abc.com';
+
+        return $user;
+    }
+
+    public function authenticate($userInfo)
+    {
+        $mock = $this->getUserInfo();
+
+        if (($userInfo['username'] == $mock['username'])
+            && ($userInfo['password'] == $mock['password'])) {
+            return true;
+        }
+
+        return false;
+    }
 }

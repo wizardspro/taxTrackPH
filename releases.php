@@ -1,3 +1,26 @@
+<?php
+
+session_start();
+
+include 'libs/Database.php';
+
+if (isset($_POST['btn_login']) && !empty($_POST['btn_login'])) {
+
+    $db = new Database($dbConf['host'], $dbConf['user'], '', $dbConf['dbname']);
+
+    $userInfo['username'] = $_POST['username'];
+    $userInfo['password'] = $_POST['password'];
+
+    if ($db->authenticate($userInfo)) {
+        $_SESSION['userInfo'] = $db->getUserInfo();
+    }
+}
+
+
+//var_dump(print_r($_SESSION));
+//exit;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -28,7 +51,7 @@
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav navbar-right">	
+                    <ul class="nav navbar-nav navbar-right">
                         <li><a href="taxcalc.html">Where's my money?</a></li>
                         <li><a href="budgetcalc.html">Let me do it</a></li>
                         <li><a href="releases.html">I'm watching yah</a></li>
@@ -67,7 +90,7 @@
 	            			<td>badm tss badum tss</td>
 	            			<td align="right">P 203209</td>
 	            		</tr>
-	            		
+
 	            	</tbody>
 	            </table>
             </div>
@@ -124,7 +147,7 @@
         <script src="assets/js/modern-business.js"></script>
 		<script>
 		$(document).ready(function(){
-		  
+
 		    $.get("http://api.kabantayngbayan.ph/saro?app_id=5286f1675e13db255f873f05&limit=100",function(data,status){
 		      console.log("Data: " + data + "\nStatus: " + status);
 		      dd = jQuery.parseJSON(data);

@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include 'libs/Database.php';
 
 $db = new Database($dbConf['host'], $dbConf['user'], $dbConf['password'],
@@ -22,7 +24,6 @@ if (isset($_POST['btn_submit']) && !empty($_POST['btn_submit'])) {
 
     $insertResult = $db->insertUserSectorBudget($data);
 }
-
 ?>
 
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
