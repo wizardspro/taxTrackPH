@@ -25,7 +25,7 @@
         <br>
 
         <fieldset>
-            <legend>Earning Compensation</legend>
+            <legend id="form_legend">Earning Compensation</legend>
             <div class="earning_compensation">
                 <label for="basic_personal_excemption">
                     Basic Personal Excemption</label>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title> TaxWatch - taxTrackPH , See and Calculate where thus your tax 
+            going. 
+        </title>
+        <!-- Bootstrap core CSS -->
+        <link href="assets/css/bootstrap.css" rel="stylesheet">
+        <!-- Add custom CSS here -->
+        <link href="assets/css/modern-business.css" rel="stylesheet">
+        <link href="assets/font-awesome/css/font-awesome.min.css" 
+            rel="stylesheet">
+        <link href="assets/css/index.css" rel="stylesheet" media="screen">
+        <link href="assets/css/template.css" rel="stylesheet" media="screen">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" 
+                        data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Tax Track PH</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for 
+                    toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">About</a></li>
+                        <li><a href="taxcalc.html">Module 1</a></li>
+                        <li><a href="#">Module 2</a></li>
+                        <li><a href="#">Module 3</a></li>
+                        <!--li class="dropdown">
+                            <a href="#" class="dropdown-toggle" 
+                            data-toggle="dropdown">Username 
+                            <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="#">Logout</a></li>
+                            </ul>
+                            </li-->
+                        <li>
+                            <button type="button" class="btn btn-primary 
+                                navbar-btn login_btn">
+                            Log in 
+                            <span class="glyphicon glyphicon-log-in">
+                            </span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+        <div class="banner">
+            <div class="container">
+            </div>
+        </div>
+        <div class="container" id="site_content">
+            <br>
+            <div class="row" id="form_ECI">
+                <fieldset class="col-md-8 col-md-offset-2 panel panel-default" >
+                    <legend>
+                        <div id="form_legend">Earning Compensation Income</div>
+                    </legend>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="gross_income"
+                                class="col-md-5 control-label">
+                            Gross Income
+                            </label>
+                            <div class="col-md-7">
+                                <input class="form-control" 
+                                    id="gross_income" type="number" min="0" step="1"
+                                    value="0"
+                                    name="gross_income " >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="basic_personal_excemption"
+                                class="col-md-5 control-label">
+                            Basic Personal Excemption
+                            </label>
+                            <div class="col-md-7">
+                                <input class="form-control" disabled
+                                    id="basic_personal_excemption" type="text"
+                                    name="basic_personal_excemption" value="50000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="additional_excemption" class="col-md-5 control-label">Additional Excemption</label>
+                            <div class="col-md-7">
+                                <input id="additional_excemption_0" type="radio"
+                                    name="additional_excemption" checked> 0
+                                <input id="additional_excemption_1" type="radio"
+                                    name="additional_excemption" value=""> 1
+                                <input id="additional_excemption_2" type="radio"
+                                    name="additional_excemption" value=""> 2
+                                <input id="additional_excemption_3" type="radio"
+                                    name="additional_excemption" value=""> 3
+                                <input id="additional_excemption_3" type="radio"
+                                    name="additional_excemption" value=""> 4
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="basic_personal_excemption"
+                                class="col-md-5 control-label">
+                            Total additional exemption
+                            </label>
+                            <div class="col-md-7">
+                                <input class="form-control" disabled
+                                    id="basic_personal_excemption" type="text"
+                                    name="basic_personal_excemption" value="50000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phhi"
+                                class="col-md-5 control-label">
+                            PHHI
+                            </label>
+                            <div class="col-md-7">
+                                <input class="form-control" id="phhi" 
+                                    type="number" step="1" min='0' value='0' name="basic_personal_excemption">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="taxable_income"
+                                class="col-md-5 control-label">
+                            Taxable income
+                            </label>
+                            <div class="col-md-7">
+                                <input class="form-control" id="taxable_income" 
+                                    type="text" disabled name="taxable_income">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tax_liablity"
+                                class="col-md-5 control-label">
+                            Tax Liability
+                            </label>
+                            <div class="col-md-7">
+                                <input class="form-control" id="tax_liablity" 
+                                    type="text" disabled name="tax_liablity">
+                            </div>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+            <ul class="nav nav-tabs nav-justified" style="margin-top:80px;">
+                <li class="active">
+                    <a href="#bysector" data-toggle="tab">By Sector</a>
+                </li>
+                <li>
+                    <a href="#byexpenseclass"  data-toggle="tab">
+                    By Expense Class
+                    </a>
+                </li>
+                <li>
+                    <a href="#bydepartment"  data-toggle="tab">By Department</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="bysector">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="col-md-7">Sectors</th>
+                                <th class="col-md-2 text-center">Percent</th>
+                                <th class="col-md-3 text-right">Budget</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Social Services</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Economic Services</td>
+                                <td align="center">(26.0%)</td>
+                                <td  align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>General Public Services</td>
+                                <td align="center">(16.1%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Debt Burden</td>
+                                <td align="center">(16.6%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Defense Services</td>
+                                <td align="center">(4.1%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane" id="byexpenseclass">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="col-md-7">Expense Class</th>
+                                <th class="col-md-2 text-center">Percent</th>
+                                <th class="col-md-3 text-right">Budget</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Personnel Services</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Maintenance and other Operating Expenses
+                                </td>
+                                <td align="center">(26.0%)</td>
+                                <td  align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Allotment to LGUs
+                                </td>
+                                <td align="center">(12.0%)</td>
+                                <td  align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    GOCC Subsidy
+                                </td>
+                                <td align="center">(0.7%)</td>
+                                <td  align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Tax Expenditure Fund
+                                </td>
+                                <td align="center">(1.2%)</td>
+                                <td  align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Interest Payments
+                                </td>
+                                <td align="center">(15.5%)</td>
+                                <td  align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Net Lending
+                                </td>
+                                <td align="center">(1.1%)</td>
+                                <td  align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Infrastructure Outlay
+                                </td>
+                                <td align="center">(17.6%)</td>
+                                <td  align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Other Capital Outlays
+                                </td>
+                                <td align="center">(2.9%)</td>
+                                <td  align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    GOCC Equity
+                                </td>
+                                <td align="center">(0.2%)</td>
+                                <td  align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Capital Transfers to LGUs
+                                </td>
+                                <td align="center">(1.6%)</td>
+                                <td  align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Carp-Landowner's Compensation
+                                </td>
+                                <td align="center">(0.2%)</td>
+                                <td  align="right">P 1022020</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane" id="bydepartment">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="col-md-7">Departments</th>
+                                <th class="col-md-2 text-center">Percent</th>
+                                <th class="col-md-3 text-right">Budget</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Congress of the Philippines</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Office of the President</td>
+                                <td align="center">(26.0%)</td>
+                                <td  align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Office of the Vice-President</td>
+                                <td align="center">(26.0%)</td>
+                                <td  align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Agrarian Reform</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Agriculture</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of </td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Budget and Management</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Education</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>State Universities and Colleges</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Energy</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Environment and Natural Resources</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Finance</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Foreign Affairs</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Health</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Interior and Local Government</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Justice</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Labor and Employment</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of National Defense</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Public Works and Highways</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Science and Technology</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Social Welfare and Development</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Tourism</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Trade and Industry</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Department of Transportation and Communications</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>National Economic Development Authority</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Presidential Communications Operations Office</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Other Executive Offices</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Autonomous Region in Muslim Mindanao</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Joint Legislative-Executive Councils</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>The Judiciary</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Civil Service Commission</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Commission on Audit</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Commission on Elections</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Office of the Ombudsman</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Commission on Human Rights</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Budgetary Support to Government Corporations(BSGC)</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Allocations to Local Government Units</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Tax Expenditures Fund</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Debt Interest Payments</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Calamity Fund</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Contingent Fund</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>DepEd School Building Program</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>E-Government Fund</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>International Commitments Fund</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Miscellaneous Personnel Benefits Fund(MPBF)</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Pension and Gratuity Fund(PGF)</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Priority Development Assistance Fund(PDAF)</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                            <tr>
+                                <td>Feasibility Studies Fund</td>
+                                <td align="center">(37.2%)</td>
+                                <td align="right">P 1022020</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- /container -->
+        <div class="footerBanner">
+      <div class="container" style="height:230px;">
+         <div class="col-md-3 col-sm-4 col-xs-6">
+            <h4><span class="glyphicon glyphicon-thumbs-up"></span> Social</h4>
+            <hr class="style-two">
+            <a href="#">Facebook</a>
+            <br>
+            <a href="#">Twitter</a>
+         </div>
+         <div class="col-md-3 col-sm-4 col-xs-6">
+            <h4><span class="glyphicon glyphicon-user"></span> Contact Us</h4>
+            <hr class="style-two">
+         </div>
+         <div class="col-md-3 col-sm-4 col-xs-6">
+            <h4><span class="glyphicon glyphicon-user"></span> Developers</h4>
+            <hr class="style-two">
+         </div>
+         <div class="col-md-3 col-sm-4 col-xs-6">
+            <h4><span class="glyphicon glyphicon-envelope"></span> Subscribe</h4>
+            <div class="input-group">
+               <input type="text" class="form-control" placeholder="Email Address">
+               <span class="input-group-btn">
+                  <button class="btn btn-primary" type="button">Go!</button>
+               </span>
+            </div>
+         </div>
+      </div>
+      <div class="copyright">
+         <div class="container text-center">
+            <small><span class="glyphicon glyphicon-copyright-mark"></span> Copyright 2012. informAksyon. All rights reserved.</small>
+         </div>
+      </div>
+   </div>
+        <!-- Bootstrap core JavaScript -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/modern-business.js"></script>
+        <script src="assets/js/taxcalcui.js"></script>
+    </body>
+</html>
