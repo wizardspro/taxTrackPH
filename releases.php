@@ -4,21 +4,6 @@ session_start();
 
 include 'libs/Database.php';
 
-if (isset($_POST['btn_login']) && !empty($_POST['btn_login'])) {
-
-    $db = new Database($dbConf['host'], $dbConf['user'], '', $dbConf['dbname']);
-
-    $userInfo['username'] = $_POST['username'];
-    $userInfo['password'] = $_POST['password'];
-
-    if ($db->authenticate($userInfo)) {
-        $_SESSION['userInfo'] = $db->getUserInfo();
-    }
-}
-
-
-//var_dump(print_r($_SESSION));
-//exit;
 
 ?>
 <!DOCTYPE html>
