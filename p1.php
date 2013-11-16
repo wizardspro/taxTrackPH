@@ -17,6 +17,7 @@
     <![endif]-->
   </head>
   <body>
+
     <form id="tax_compute" name="tax_compute" method="post" action="index.php">
         <label>Gross Income</label>
         <input type="text" name="gross_compensation" value="200000">
