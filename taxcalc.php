@@ -5,14 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title> TaxWatch - taxTrackPH , See and Calculate where thus your tax 
-            going. 
+        <title> TaxWatch - taxTrackPH , See and Calculate where thus your tax
+            going.
         </title>
         <!-- Bootstrap core CSS -->
         <link href="assets/css/bootstrap.css" rel="stylesheet">
         <!-- Add custom CSS here -->
         <link href="assets/css/modern-business.css" rel="stylesheet">
-        <link href="assets/font-awesome/css/font-awesome.min.css" 
+        <link href="assets/font-awesome/css/font-awesome.min.css"
             rel="stylesheet">
         <link href="assets/css/index.css" rel="stylesheet" media="screen">
         <link href="assets/css/template.css" rel="stylesheet" media="screen">
@@ -21,7 +21,7 @@
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" 
+                    <button type="button" class="navbar-toggle"
                     data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -30,16 +30,16 @@
                     </button>
                     <a class="navbar-brand" href="index.html">Tax Track PH</a>
                 </div>
-                <!-- Collect the nav links, forms, and other content for 
+                <!-- Collect the nav links, forms, and other content for
                 toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav navbar-right">    
+                    <ul class="nav navbar-nav navbar-right">
                         <li><a href="taxcalc.html">Where's my money?</a></li>
                         <li><a href="budgetcalc.html">Let me do it</a></li>
                         <li><a href="releases.html">I'm watching yah</a></li>
                         <!--li class="dropdown">
-                            <a href="#" class="dropdown-toggle" 
-                            data-toggle="dropdown">Username 
+                            <a href="#" class="dropdown-toggle"
+                            data-toggle="dropdown">Username
                             <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                             <li><a href="#">Settings</a></li>
@@ -47,8 +47,8 @@
                             </ul>
                             </li-->
                         <li>
-                            <button type="button" class="btn btn-primary 
-                            navbar-btn login_btn">Log in 
+                            <button type="button" class="btn btn-primary
+                            navbar-btn login_btn">Log in
                                 <span class="glyphicon glyphicon-log-in"></span>
                             </button>
                         </li>
@@ -77,7 +77,7 @@
                             <small>Gross Income</small>
                             </label>
                             <div class="col-md-7">
-                                <input class="form-control" onkeyup="update()" 
+                                <input class="form-control" onkeyup="update()"
                                 onchange="update()" id="gross_income"
                                 type="number" min="60000" step="1" value="60000"
                                 name="gross_income " >
@@ -91,33 +91,33 @@
                             <div class="col-md-7">
                                 <input class="form-control" disabled
                                     id="basic_personal_exemption" type="text"
-                                    name="basic_personal_exemption" 
+                                    name="basic_personal_exemption"
                                     value="50000">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="additional_exemption_radio" 
+                            <label for="additional_exemption_radio"
                             class="col-md-5 control-label"><small>Additional exemption</small>
                             </label>
                             <div class="col-md-7">
-                                <input id="additional_exemption_radio_0" 
+                                <input id="additional_exemption_radio_0"
                                     type="radio" onclick="update()"
                                     name="additional_exemption_radio" checked> 0
-                                <input id="additional_exemption_radio_1" 
+                                <input id="additional_exemption_radio_1"
                                     type="radio" onclick="update()"
-                                    name="additional_exemption_radio" value=""> 
+                                    name="additional_exemption_radio" value="">
                                     1
-                                <input id="additional_exemption_radio_2" 
+                                <input id="additional_exemption_radio_2"
                                     type="radio" onclick="update()"
-                                    name="additional_exemption_radio" value=""> 
+                                    name="additional_exemption_radio" value="">
                                     2
-                                <input id="additional_exemption_radio_3" 
+                                <input id="additional_exemption_radio_3"
                                     type="radio" onclick="update()"
-                                    name="additional_exemption_radio" value=""> 
+                                    name="additional_exemption_radio" value="">
                                     3
-                                <input id="additional_exemption_radio_4" 
+                                <input id="additional_exemption_radio_4"
                                     type="radio" onclick="update()"
-                                    name="additional_exemption_radio" value=""> 
+                                    name="additional_exemption_radio" value="">
                                     4
                             </div>
                         </div>
@@ -135,12 +135,12 @@
                         <div class="form-group">
                             <label for="phhi"
                                 class="col-md-5 control-label">
-                            PHHI
+                            Health Insurance
                             </label>
                             <div class="col-md-7">
                                 <input class="form-control" onkeyup="update()"
-                                    onchange="update()" id="phhi" type="number" 
-                                    step="1" min='0' max="2400" 
+                                    onchange="update()" id="phhi" type="number"
+                                    step="1" min='0' max="2400"
                                     value='0' name="phhi">
                             </div>
                         </div>
@@ -150,7 +150,7 @@
                             <small>Taxable income</small>
                             </label>
                             <div class="col-md-7">
-                                <input class="form-control" id="taxable_income" 
+                                <input class="form-control" id="taxable_income"
                                     type="text" disabled name="taxable_income">
                             </div>
                         </div>
@@ -160,7 +160,7 @@
                             Tax Liability
                             </label>
                             <div class="col-md-7">
-                                <input class="form-control" id="tax_liablity" 
+                                <input class="form-control" id="tax_liablity"
                                     type="text" disabled name="tax_liablity">
                             </div>
                         </div>
@@ -184,7 +184,7 @@
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="bysector">
-                            <table class="table table-striped table-bordered 
+                            <table class="table table-striped table-bordered
                                 tablesorter" id="tbl_bySectors">
                                 <thead>
                                     <tr>
@@ -225,7 +225,7 @@
                             </table>
                         </div>
                         <div class="tab-pane" id="byexpenseclass">
-                            <table class="table table-striped table-bordered 
+                            <table class="table table-striped table-bordered
                             tablesorter" id="tbl_byExpenseClass">
                                 <thead>
                                     <tr>
@@ -244,7 +244,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            Maintenance and other Operating 
+                                            Maintenance and other Operating
                                             Expenses
                                         </td>
                                         <td align="center">(26.0%)</td>
@@ -324,7 +324,7 @@
                             </table>
                         </div>
                         <div class="tab-pane" id="bydepartment">
-                            <table class="table table-striped table-bordered 
+                            <table class="table table-striped table-bordered
                                 tablesorter"
                                 id="tbl_byDepartment">
                                 <thead>
@@ -384,7 +384,7 @@
                                         <td align="right" id="DOE">P 0</td>
                                     </tr>
                                     <tr>
-                                        <td>Department of Environment and 
+                                        <td>Department of Environment and
                                             Natural Resources</td>
                                         <td align="center">(1.054%)</td>
                                         <td align="right" id="DENR">P 0</td>
@@ -405,7 +405,7 @@
                                         <td align="right" id="DOH">P 0</td>
                                     </tr>
                                     <tr>
-                                        <td>Department of Interior and Local 
+                                        <td>Department of Interior and Local
                                             Government</td>
                                         <td align="center">(4.444%)</td>
                                         <td align="right" id="DILG">P 0</td>
@@ -427,19 +427,19 @@
                                         <td align="right" id="DND">P 0</td>
                                     </tr>
                                     <tr>
-                                        <td>Department of Public Works and 
+                                        <td>Department of Public Works and
                                             Highways</td>
                                         <td align="center">(9.392%)</td>
                                         <td align="right" id="DPWH">P 0</td>
                                     </tr>
                                     <tr>
-                                        <td>Department of Science and 
+                                        <td>Department of Science and
                                             Technology</td>
                                         <td align="center">(0.538%)</td>
                                         <td align="right" id="DOST">P 0</td>
                                     </tr>
                                     <tr>
-                                        <td>Department of Social Welfare and 
+                                        <td>Department of Social Welfare and
                                             Development</td>
                                         <td align="center">(3.483%)</td>
                                         <td align="right" id="DSWD">P 0</td>
@@ -456,19 +456,19 @@
                                         <td align="right" id="DTI">P 0</td>
                                     </tr>
                                     <tr>
-                                        <td>Department of Transportation and 
+                                        <td>Department of Transportation and
                                             Communications</td>
                                         <td align="center">(2.059%)</td>
                                         <td align="right" id="DOTC">P 0</td>
                                     </tr>
                                     <tr>
-                                        <td>National Economic Development 
+                                        <td>National Economic Development
                                             Authority</td>
                                         <td align="center">(0.176%)</td>
                                         <td align="right" id="NEDA">P 0</td>
                                     </tr>
                                     <tr>
-                                        <td>Presidential Communications 
+                                        <td>Presidential Communications
                                             Operations Office</td>
                                         <td align="center">(0.053%)</td>
                                         <td align="right" id="PCOO">P 0</td>
@@ -521,13 +521,13 @@
                                         <td align="right" id="CHR">P 0</td>
                                     </tr>
                                     <tr>
-                                        <td>Budgetary Support to Government 
+                                        <td>Budgetary Support to Government
                                             Corporations(BSGC)</td>
                                         <td align="center">(3.16%)</td>
                                         <td align="right" id="BSGC">P 0</td>
                                     </tr>
                                     <tr>
-                                        <td>Allocations to Local Government 
+                                        <td>Allocations to Local Government
                                             Units</td>
                                         <td align="center">(15.93%)</td>
                                         <td align="right" id="ALGU">P 0</td>
@@ -568,7 +568,7 @@
                                         <td align="right" id="ICF">P 0</td>
                                     </tr>
                                     <tr>
-                                        <td>Miscellaneous Personnel Benefits 
+                                        <td>Miscellaneous Personnel Benefits
                                             Fund(MPBF)</td>
                                         <td align="center">(3.56%)</td>
                                         <td align="right" id="MPBF">P 0</td>
@@ -579,7 +579,7 @@
                                         <td align="right" id="PGF">P 0</td>
                                     </tr>
                                     <tr>
-                                        <td>Priority Development Assistance 
+                                        <td>Priority Development Assistance
                                             Fund(PDAF)</td>
                                         <td align="center">(1.11%)</td>
                                         <td align="right" id="PDAF">P 0</td>
@@ -601,7 +601,7 @@
         <div class="footerBanner">
             <div class="container" style="height:230px;">
                 <div class="col-md-3 col-sm-4 col-xs-6">
-                    <h4><span class="glyphicon glyphicon-thumbs-up"></span> 
+                    <h4><span class="glyphicon glyphicon-thumbs-up"></span>
                         Social</h4>
                     <hr class="style-two">
                     <a href="#">Facebook</a>
@@ -609,20 +609,20 @@
                     <a href="#">Twitter</a>
                 </div>
                 <div class="col-md-3 col-sm-12">
-                    <h4><span class="glyphicon glyphicon-user"></span> 
+                    <h4><span class="glyphicon glyphicon-user"></span>
                         Contact Us</h4>
                     <hr class="style-two">
                 </div>
                 <div class="col-md-3 col-sm-12">
-                    <h4><span class="glyphicon glyphicon-user"></span> 
+                    <h4><span class="glyphicon glyphicon-user"></span>
                         Developers</h4>
                     <hr class="style-two">
                 </div>
                 <div class="col-md-3 col-sm-12">
-                    <h4><span class="glyphicon glyphicon-envelope"></span> 
+                    <h4><span class="glyphicon glyphicon-envelope"></span>
                         Subscribe</h4>
                     <div class="input-group">
-                        <input type="text" class="form-control" 
+                        <input type="text" class="form-control"
                         placeholder="Email Address">
                         <span class="input-group-btn">
                         <button class="btn btn-primary" type="button">Go!
