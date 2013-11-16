@@ -78,7 +78,7 @@
                     value=""><br>
             </div> <!-- /.tax_group -->
         </fieldset>
-
+        <button id="name" name="calculate">Calculate</button>
     </form>
 
 
