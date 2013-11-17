@@ -31,29 +31,22 @@ $data = $saro->data[0];
             </div>
         </div>
         <div class="container" id='site_content'>
-            <div class="col-md-4 ">
-                <div class="panel panel-default" style="height:300px;overflow:auto;margin-bottom:-5px;">
-                    
+        	<div class="col-md-4 well">
+        		<form method="post" action="view.php">
+                <div class="pull-right">
+                    <input type="radio" id="radio_positive" name="comment_status" value="1" checked>
+                    <span class="label label-success">Positive</span>
+                    <input type="radio" id="radio_negative" name="comment_status" value="0">
+                    <span class="label label-danger">Negative</span>
                 </div>
-            	<div class="well">
-                    <div class="pull-right">
-                        <input type="radio" id="radio_positive" name="comment_status" checked>
-                        <span class="label label-success">Positive</span>
-                        <input type="radio" id="radio_negative" name="comment_status">
-                        <span class="label label-danger">Negative</span>
-                    </div>
-                    <label for="textarea_comment" class="pull-left">Message </label>
-                    
-                    <textarea name="textarea_comment" style="margin-top:20px;margin-bottom:10px;" id="textarea_comment" class="form-control" rows="3"></textarea>
-                    
-                    <button class="btn btn-primary">Post Comment</button>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div><font color="green">320 <span class="glyphicon glyphicon-thumbs-up"></span></font> 
-                    &nbsp;&nbsp;&nbsp;
-                    <font color="red">146 <span class="glyphicon glyphicon-thumbs-down"></span></font></div>
-        	<div style="max-height:460px;overflow:auto;">
+                <label for="textarea_comment" class="pull-left">Message </label>
+                <br><br>
+                <textarea name="textarea_comment" id="textarea_comment" class="form-control" rows="3"></textarea>
+                <br>
+                <input type="submit" class="btn btn-primary" name="btn_submit" value="Post Comment">
+                </form>
+        	</div>
+        	<div class="col-md-8" style="max-height:400px;overflow:auto;">
 	            <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -145,7 +138,6 @@ $data = $saro->data[0];
                         </tr>
 	            	</tbody>
 	            </table>
-                </div>
             </div>
         </div>
         <br>
