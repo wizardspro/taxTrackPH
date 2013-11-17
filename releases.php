@@ -2,7 +2,7 @@
 session_start();
 
 include 'libs/Database.php';
-include 'libs/kabantayngbayan.php';
+include 'libs/KabantayNgBayan.php';
 
 $kb = new KabantayNgBayan();
 $page = isset($_GET['page'])?$_GET['page']:"";
