@@ -16,6 +16,7 @@ class KabantayNgBayan
         //&limit=10
         $apiUrl = $this->_apiBaseUrl . '/' . $section . '/?app_id=' .
             $this->_apiKey . $param;
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $apiUrl);
         curl_setopt($ch, CURLOPT_HEADER, 0);

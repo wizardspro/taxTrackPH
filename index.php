@@ -22,11 +22,15 @@ session_start();
         <?php include "navbar.php" ?>
         <div class="banner">
             <div class="container">
+                <div style="font-size:60px;box-shadow:0px 5px 15px #000;
+                background-color:#fff;padding:10px;font-family:sans;opacity:0.8;"
+                 class="pull-right">Let's Talk</div>
             </div>
         </div>
         <div class="container">
             <div class="row" style="margin-top: 30px;">
             </div>
+
             <div id="disqus_thread"></div>
         </div>
         <!-- /container -->
@@ -35,8 +39,6 @@ session_start();
 
 	
     
-
-
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'taxtrackph'; // required: replace example with your forum shortname
