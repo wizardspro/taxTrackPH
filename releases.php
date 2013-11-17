@@ -5,7 +5,8 @@ include 'libs/Database.php';
 include 'libs/kabantayngbayan.php';
 
 $kb = new KabantayNgBayan();
-$saro = $kb->get('saro', '&limit=10&skip=' . $_GET['page']);
+$page = isset($_GET['page'])?$_GET['page']:"";
+$saro = $kb->get('saro', '&limit=10&skip=' . $page);
 ?>
 <!DOCTYPE html>
 <html lang="en">
