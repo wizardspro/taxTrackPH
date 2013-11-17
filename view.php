@@ -28,6 +28,9 @@ $data = $saro->data[0];
         <?php include "navbar.php" ?>
         <div class="banner">
             <div class="container">
+                
+                <div style="font-size:60px;box-shadow:0px 5px 15px #000;background-color:#fff;padding:10px;font-family:sans;opacity:0.8;" class="pull-right">What yah think?</div>
+            
             </div>
         </div>
         <div class="container" id='site_content'>
