@@ -55,11 +55,7 @@
                 </div>
             </div>
             <div class="col-md-8" style="display:block;">
-                <div id="chart_div" style="height: 400px;"></div>
-            </div>
-            <div class="col-md-8">
-                <div id="chart_div2" style="height:450px;"></div>
-                <div class=" panel panel-default">
+            <div class=" panel panel-default">
                     <table class="table table-striped table-bordered 
                                 tablesorter" id="tbl_bySectors">
                         <thead>
@@ -108,6 +104,11 @@
                 </div>
                 <button class="btn btn-primary" form="theForm" id="submit_btn">Submit</button>
             </div>
+                <!--div id="chart_div" style="height: 400px;"></div-->
+            </div>
+            <div class="col-md-8">
+                <!--div id="chart_div2" style="height:450px;"></div-->
+                
         </div>
         <br><br>
 
@@ -147,14 +148,14 @@
                 var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
                 chart.draw(data, options);
               }
-              function drawChart2(e_ss , e_es , e_gps , E_db , e_d ) {
+              function drawChart2() {
                 var data = google.visualization.arrayToDataTable([
                   ['Departments', 'Actual', 'Citizens','User'],
-                  ['Social Services',  37.2, 30.4, e_ss],
-                  ['Economic Services',  26.0,      26.1, e_es],
-                  ['General Public Services',  16.2,      16, e_gps],
-                  ['Dept Burden',  16.6,      20, e_db],
-                  ['Defense',  4.1, 3, e_d]
+                  ['Social Services',  37.2, 30.4, 32],
+                  ['Economic Services',  26.0,      26.1, 23],
+                  ['General Public Services',  16.2,      16, 12],
+                  ['Dept Burden',  16.6,      20, 32],
+                  ['Defense',  4.1, 3, 9]
 
                 ]);
 
@@ -183,7 +184,6 @@
                     $('#gps_value').text(t*(gps/100));
                     $('#db_value').text(t*(db/100));
                     $('#d_value').text(t*(d/100));
-                    drawChart2(129090,129090678,456,65445,654654) {
                 }
                 
 

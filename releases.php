@@ -36,7 +36,7 @@ $saro = $kb->get('saro', '&limit=10&skip=' . $page);
         	<div class="col-md-4 well">
         		
         	</div>
-        	<div class="col-md-8" style="max-height:300px;overflow:auto;">
+        	<div class="col-md-8" style="max-height:600px;overflow:auto;">
 	            <table class="table table-striped table-hover ">
 	            	<thead>
 	            		<tr>
