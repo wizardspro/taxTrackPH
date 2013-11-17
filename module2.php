@@ -54,26 +54,8 @@
                     </table>
                 </div>
             </div>
-            <div class="col-md-8" style="display:none;">
+            <div class="col-md-8" style="display:block;">
                 <div id="chart_div" style="height: 400px;"></div>
-                <div class=" panel panel-warning">
-                    <div class="panel-heading">
-                        Top Rated
-                    </div>
-                    <hr>
-                </div>
-                <div class=" panel panel-success">
-                    <div class="panel-heading">
-                        Most Popular
-                    </div>
-                    <hr>
-                </div>
-                <div class=" panel panel-danger">
-                    <div class="panel-heading">
-                        Most Hated
-                    </div>
-                    <hr>
-                </div>
             </div>
             <div class="col-md-8">
                 <div id="chart_div2" style="height:450px;"></div>
