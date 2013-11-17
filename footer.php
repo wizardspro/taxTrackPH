@@ -3,9 +3,11 @@
                 <div class="col-md-3 col-sm-4 col-xs-6">
                     <h4><span class="glyphicon glyphicon-thumbs-up"></span> Social</h4>
                     <hr class="style-two">
-                    <a href="https://www.facebook.com/groups/1412810698950888/">Facebook</a>
+                    <a href="https://www.facebook.com/groups/1412810698950888/">
+                    <img src="assets/img/facebook.png" alt="Facebook"></a>
                     <br>
-                    <a href="https://twitter.com/datagovph">Twitter</a>
+                    <a href="https://twitter.com/datagovph">
+                    <img src="assets/img/twitter.png" alt="Twitter"></a>
                 </div>
                 <div class="col-md-3 col-sm-4 col-xs-6">
                     <h4><span class="glyphicon glyphicon-user"></span> Contact Us</h4>
