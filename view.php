@@ -53,20 +53,29 @@ if (isset($_POST['btn_submit']) && !empty($_POST['btn_submit'])) {
         <div class="container" id='site_content'>
         	<div class="col-md-4 well">
 
-                <?php 
-                	$comments = $db->getAllComments();
-                	echo "Total: " . count($comments) . "<br>";
+                
+                <div class="panel panel-default" style="height:300px;overflow:auto;">
+                <div class="panel-heading text-right">
+                	<?php $comments = $db->getAllComments(); echo "Total: &nbsp;<span class='badge pull-right'>" . count($comments) . "</span>";?>
+                </div>
+                <div class="panel-body">
+                	<?php 
                 	if ($comments > 0) {
 	                	foreach ($comments as $v) {
-						    echo $v['email'] . "<br>";
-						    echo $v['full_name'] . "<br>";
-						    echo $v['comments'] . "<br>";
-						    echo $v['inserted_on'] . "<br>";
-						    echo $v['status'] . "<br><br>";
+	                ?>
+	                		<strong><?php echo $v['full_name']; echo ($v['status']) ? " <span class=\"label label-success\">
+	                		P</span>" : "<span class=\"label label-danger\">N</span>";?></strong><br>
+	                		<small><i><?php echo $v['inserted_on'];?></i></small><br>
+	                		<small><?php echo $v['email'];?></small><br>
+	                		<p><?php echo $v['comments'];?></p>
+						    <hr>
+
+	                <?php
 	                	} 
                 	}
-                ?>
-
+                	?>
+                </div>
+                </div>
         		<form method="post" action="view.php?id=<?php echo $_GET['id']; ?>">
                 <div class="pull-right">
                     <input type="radio" id="radio_positive" name="comment_status" value="1" checked>
