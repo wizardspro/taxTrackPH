@@ -3,7 +3,7 @@
                 <div class="col-md-3 col-sm-4 col-xs-6">
                     <h4><span class="glyphicon glyphicon-thumbs-up"></span> Social</h4>
                     <hr class="style-two">
-                    <a href="#">Facebook</a>
+                    <a href="https://www.facebook.com/groups/1412810698950888/">Facebook</a>
                     <br>
                     <a href="#">Twitter</a>
                 </div>
