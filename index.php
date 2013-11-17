@@ -56,59 +56,23 @@ session_start();
         </nav>
         <div class="banner">
             <div class="container">
+                <div style="font-size:60px;box-shadow:0px 5px 15px #000;
+                background-color:#fff;padding:10px;font-family:sans;opacity:0.8;"
+                 class="pull-right">Let's Talk</div>
             </div>
         </div>
         <div class="container">
             <div class="row" style="margin-top: 30px;">
-                <div class="col-md-4 text-center">
-                    <img style="width: 140px; height: 140px;" class="img-round" src="assets/img/con-256.png" data-src="holder.js/140x140" alt="140x140">
-                    <h2>Make Donations</h2>
-                    <p>The quick brown fox jumps over the lazy dogs.</p>
-                    <p><a class="btn btn-default" href="about-donations.php">View details »</a></p>
-                </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-md-4 text-center">
-                    <img style="width: 140px; height: 140px;" class="img-round" src="assets/img/yt.png" data-src="holder.js/140x140" alt="140x140">
-                    <h2>Share Knowledge</h2>
-                    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                    <p><a class="btn btn-default" href="about-channels.php">View details »</a></p>
-                </div>
-                <!-- /.col-lg-4 -->
-                <div class="col-md-4 text-center">
-                    <img style="width: 140px; height: 140px;" class="img-round" src="assets/img/map.png" data-src="holder.js/140x140" alt="140x140">
-                    <h2>Locate Schools</h2>
-                    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                    <p><a class="btn btn-default" href="#">View details »</a></p>
-                </div>
-                <!-- /.col-lg-4 -->
             </div>
-            <hr>
             <br>
-            <br>
-            <br>
-            <br><br>
-            <br>
-            <br>
-            <br><br>
-            <br>
-            <br>
-            <br><br>
-            <br>
-            <br>
-            <br><br>
-            <br>
-            <br>
-            <br><br>
-            <br>
-            <br>
-            <br>
+            <div id="disqus_thread"></div>
         </div>
         <!-- /container -->
 
 <!-- disqus plugin -->
 
 
-    <div id="disqus_thread"></div>
+    
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'taxtrackph'; // required: replace example with your forum shortname
