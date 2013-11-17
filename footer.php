@@ -5,7 +5,7 @@
                     <hr class="style-two">
                     <a href="https://www.facebook.com/groups/1412810698950888/">Facebook</a>
                     <br>
-                    <a href="#">Twitter</a>
+                    <a href="https://twitter.com/datagovph">Twitter</a>
                 </div>
                 <div class="col-md-3 col-sm-4 col-xs-6">
                     <h4><span class="glyphicon glyphicon-user"></span> Contact Us</h4>
