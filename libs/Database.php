@@ -186,7 +186,7 @@ class Database
 
     public function getAllComments()
     {
-        $query = "SELECT * from user_dept_budgets";
+        $query = "SELECT * from comments order by id desc";
 
         $result = $this->_mysqli->query($query, MYSQLI_USE_RESULT);
 
@@ -252,6 +252,7 @@ class Database
 
     public function getUserInfo()
     {
+    	$user['fb_id'] = '124';
         $user['username'] = 'testuser';
         $user['password'] = 'password';
         $user['full_name'] = 'Juan Dela Cruz';
@@ -266,6 +267,15 @@ class Database
 
         if (($userInfo['username'] == $mock['username'])
             && ($userInfo['password'] == $mock['password'])) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function isLoggedIn() {
+
+    	if (isset($_SESSION['userInfo']['username']) && !empty($_SESSION['userInfo']['username'])) {
             return true;
         }
 

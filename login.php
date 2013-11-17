@@ -8,7 +8,7 @@ $loginMessage = "";
 
 if (isset($_POST['btn_login']) && !empty($_POST['btn_login'])) {
 
-    $db = new Database($dbConf['host'], $dbConf['user'], '', $dbConf['dbname']);
+    $db = new Database($dbConf['host'], $dbConf['user'], $dbConf['password'], $dbConf['dbname']);
 
     $userInfo['username'] = $_POST['username'];
     $userInfo['password'] = $_POST['password'];
