@@ -56,14 +56,14 @@ if (isset($_POST['btn_login']) && !empty($_POST['btn_login'])) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Tax Track PH</a>
+                    <a class="navbar-brand" href="index.php">Tax Track PH</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav navbar-right">    
-                        <li><a href="taxcalc.html">Where's my money?</a></li>
-                        <li><a href="budgetcalc.html">Let me do it</a></li>
-                        <li><a href="releases.html">I'm watching yah</a></li>
+                        <li><a href="taxcalc.php">Where's my money?</a></li>
+                        <li><a href="budgetcalc.php">Let me do it</a></li>
+                        <li><a href="releases.php">I'm watching yah</a></li>
                         <!--li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Username <b class="caret"></b></a>
                             <ul class="dropdown-menu">

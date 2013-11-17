@@ -28,14 +28,14 @@ session_start();
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Tax Track PH</a>
+                    <a class="navbar-brand" href="index.php">Tax Track PH</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav navbar-right">	
-                        <li><a href="taxcalc.html">Where's my money?</a></li>
-                        <li><a href="budgetcalc.html">Let me do it</a></li>
-                        <li><a href="releases.html">I'm watching yah</a></li>
+                        <li><a href="taxcalc.php">Where's my money?</a></li>
+                        <li><a href="budgetcalc.php">Let me do it</a></li>
+                        <li><a href="releases.php">I'm watching yah</a></li>
                         <?php if (isset($_SESSION['userInfo']['username']) &&
                 			!empty($_SESSION['userInfo']['username'])) : ?>
                         <li class="dropdown">
@@ -47,7 +47,7 @@ session_start();
                             </li>
                             <?php else: ?>   
                         <li><button onClick="window.location = 'login.php'" type="button" class="btn btn-primary navbar-btn login_btn">Log in <span class="glyphicon glyphicon-log-in"></span></button></li>
-                    <?php endif: ?>   
+                    <?php endif; ?>   
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -64,14 +64,14 @@ session_start();
                     <img style="width: 140px; height: 140px;" class="img-round" src="assets/img/con-256.png" data-src="holder.js/140x140" alt="140x140">
                     <h2>Make Donations</h2>
                     <p>The quick brown fox jumps over the lazy dogs.</p>
-                    <p><a class="btn btn-default" href="about-donations.html">View details »</a></p>
+                    <p><a class="btn btn-default" href="about-donations.php">View details »</a></p>
                 </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-md-4 text-center">
                     <img style="width: 140px; height: 140px;" class="img-round" src="assets/img/yt.png" data-src="holder.js/140x140" alt="140x140">
                     <h2>Share Knowledge</h2>
                     <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                    <p><a class="btn btn-default" href="about-channels.html">View details »</a></p>
+                    <p><a class="btn btn-default" href="about-channels.php">View details »</a></p>
                 </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-md-4 text-center">
