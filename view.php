@@ -31,19 +31,24 @@ $data = $saro->data[0];
             </div>
         </div>
         <div class="container" id='site_content'>
-        	<div class="col-md-4 well">
-                <div class="pull-right">
-                    <input type="radio" id="radio_positive" name="comment_status" checked>
-                    <span class="label label-success">Positive</span>
-                    <input type="radio" id="radio_negative" name="comment_status">
-                    <span class="label label-danger">Negative</span>
+            <div class="col-md-4 ">
+                <div class="panel panel-default" style="height:300px;overflow:auto;">
+                <br><br><br><br><br>
+            	<div class="well">
+                    <div class="pull-right">
+                        <input type="radio" id="radio_positive" name="comment_status" checked>
+                        <span class="label label-success">Positive</span>
+                        <input type="radio" id="radio_negative" name="comment_status">
+                        <span class="label label-danger">Negative</span>
+                    </div>
+                    <label for="textarea_comment" class="pull-left">Message </label>
+                    
+                    <textarea name="textarea_comment" style="margin-top:20px;margin-bottom:10px;" id="textarea_comment" class="form-control" rows="3"></textarea>
+                    
+                    <button class="btn btn-primary">Send</button>
+            	</div>
                 </div>
-                <label for="textarea_comment" class="pull-left">Message </label>
-                <br><br>
-                <textarea name="textarea_comment" id="textarea_comment" class="form-control" rows="3"></textarea>
-                <br>
-                <button class="btn btn-primary">Send</button>
-        	</div>
+            </div>
         	<div class="col-md-8" style="max-height:400px;overflow:auto;">
 	            <table class="table table-bordered">
                     <thead>
