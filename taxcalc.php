@@ -50,7 +50,7 @@ session_start();
                             </li>
                             <?php else: ?>   
                         <li><button onClick="window.location = 'login.php'" type="button" class="btn btn-primary navbar-btn login_btn">Log in <span class="glyphicon glyphicon-log-in"></span></button></li>
-                    <?php endif: ?>   
+                    <?php endif; ?>   
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
