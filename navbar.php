@@ -19,7 +19,11 @@
                 <?php if (isset($_SESSION['userInfo']['username']) &&
         			!empty($_SESSION['userInfo']['username'])) : ?>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Username <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <?php 
+                    	echo ucfirst($_SESSION['userInfo']['username']);
+                    ?>
+                    <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     <li><a href="#">Settings</a></li>
                     <li><a href="logout.php">Logout</a></li>

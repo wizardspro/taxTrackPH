@@ -68,7 +68,7 @@ $saro = $kb->get('saro', '&limit=10&skip=' . $page);
         </div>
         <div class="container" id='site_content'>
         	<div class="col-md-4 well">
-        		hmm
+        		
         	</div>
         	<div class="col-md-8" style="max-height:300px;overflow:auto;">
 	            <table class="table table-striped table-hover ">
