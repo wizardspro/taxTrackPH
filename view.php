@@ -32,8 +32,9 @@ $data = $saro->data[0];
         </div>
         <div class="container" id='site_content'>
             <div class="col-md-4 ">
-                <div class="panel panel-default" style="height:300px;overflow:auto;">
-                <br><br><br><br><br>
+                <div class="panel panel-default" style="height:300px;overflow:auto;margin-bottom:-5px;">
+                    
+                </div>
             	<div class="well">
                     <div class="pull-right">
                         <input type="radio" id="radio_positive" name="comment_status" checked>
@@ -45,11 +46,14 @@ $data = $saro->data[0];
                     
                     <textarea name="textarea_comment" style="margin-top:20px;margin-bottom:10px;" id="textarea_comment" class="form-control" rows="3"></textarea>
                     
-                    <button class="btn btn-primary">Send</button>
-            	</div>
+                    <button class="btn btn-primary">Post Comment</button>
                 </div>
             </div>
-        	<div class="col-md-8" style="max-height:400px;overflow:auto;">
+            <div class="col-md-8">
+                <div><font color="green">320 <span class="glyphicon glyphicon-thumbs-up"></span></font> 
+                    &nbsp;&nbsp;&nbsp;
+                    <font color="red">146 <span class="glyphicon glyphicon-thumbs-down"></span></font></div>
+        	<div style="max-height:460px;overflow:auto;">
 	            <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -141,6 +145,7 @@ $data = $saro->data[0];
                         </tr>
 	            	</tbody>
 	            </table>
+                </div>
             </div>
         </div>
         <br>
