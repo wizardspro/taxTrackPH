@@ -5,8 +5,28 @@ include 'libs/Database.php';
 include 'libs/KabantayNgBayan.php';
 
 $kb = new KabantayNgBayan();
-$saro = $kb->get('saro', '&id=' . $_GET['id']);
+$saro = $kb->get('saro', '&id=' . $_REQUEST['id']);
 $data = $saro->data[0];
+
+$db = new Database($dbConf['host'], $dbConf['user'], $dbConf['password'], $dbConf['dbname']); 
+
+if (isset($_POST['btn_submit']) && !empty($_POST['btn_submit'])) {
+
+	if (isset($_SESSION['userInfo']['username']) && !empty($_SESSION['userInfo']['username'])) {
+		//print_r($_SESSION);	
+
+		$dataComment['fb_id'] = $_SESSION['userInfo']['fb_id'];
+		$dataComment['email'] = $_SESSION['userInfo']['email'];
+		$dataComment['full_name'] = $_SESSION['userInfo']['full_name'];
+		$dataComment['comments'] = $_POST['textarea_comment'];
+		$dataComment['status'] = $_POST['comment_status'];
+		$dataComment['type'] = 1; // for saro
+			
+		$insertResult = $db->insertComment($dataComment);
+	}
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,29 +54,45 @@ $data = $saro->data[0];
             </div>
         </div>
         <div class="container" id='site_content'>
-            <div class="col-md-4 ">
-                <div class="panel panel-default" style="height:300px;overflow:auto;margin-bottom:-5px;">
-                    
+        	<div class="col-md-4 well">
+
+                <?php 
+                	$comments = $db->getAllComments();
+                	echo "Total: " . count($comments) . "<br>";
+                	if ($comments > 0) {
+	                	foreach ($comments as $v) {
+						    echo $v['email'] . "<br>";
+						    echo $v['full_name'] . "<br>";
+						    echo $v['comments'] . "<br>";
+						    echo $v['inserted_on'] . "<br>";
+						    echo $v['status'] . "<br><br>";
+	                	} 
+                	}
+                ?>
+
+        		<form method="post" action="view.php?id=<?php echo $_GET['id']; ?>">
+                <div class="pull-right">
+                    <input type="radio" id="radio_positive" name="comment_status" value="1" checked>
+                    <span class="label label-success">Positive</span>
+                    <input type="radio" id="radio_negative" name="comment_status" value="0">
+                    <span class="label label-danger">Negative</span>
                 </div>
-            	<div class="well">
-                    <div class="pull-right">
-                        <input type="radio" id="radio_positive" name="comment_status" checked>
-                        <span class="label label-success">Positive</span>
-                        <input type="radio" id="radio_negative" name="comment_status">
-                        <span class="label label-danger">Negative</span>
-                    </div>
-                    <label for="textarea_comment" class="pull-left">Message </label>
-                    
-                    <textarea name="textarea_comment" style="margin-top:20px;margin-bottom:10px;" id="textarea_comment" class="form-control" rows="3"></textarea>
-                    
-                    <button class="btn btn-primary">Post Comment</button>
+                <div>
+                <?php 
+                	if (isset($insertResult) && $insertResult > 0)  {
+                		echo "Comment has been posted.";
+                	}
+                ?> 
                 </div>
-            </div>
-            <div class="col-md-8">
-                <div><font color="green">320 <span class="glyphicon glyphicon-thumbs-up"></span></font> 
-                    &nbsp;&nbsp;&nbsp;
-                    <font color="red">146 <span class="glyphicon glyphicon-thumbs-down"></span></font></div>
-        	<div style="max-height:460px;overflow:auto;">
+                <label for="textarea_comment" class="pull-left">Message </label>
+                <br><br>
+                <textarea name="textarea_comment" id="textarea_comment" class="form-control" rows="3"></textarea>
+                <br>
+                <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+                <input type="submit" class="btn btn-primary" name="btn_submit" value="Post Comment">
+                </form>
+        	</div>
+        	<div class="col-md-8" style="max-height:400px;overflow:auto;">
 	            <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -148,7 +184,6 @@ $data = $saro->data[0];
                         </tr>
 	            	</tbody>
 	            </table>
-                </div>
             </div>
         </div>
         <br>
