@@ -10,10 +10,17 @@
                 <div class="col-md-3 col-sm-4 col-xs-6">
                     <h4><span class="glyphicon glyphicon-user"></span> Contact Us</h4>
                     <hr class="style-two">
+                    <a href="#">inf0rmaksy0n@live.com</a>
                 </div>
                 <div class="col-md-3 col-sm-4 col-xs-6">
                     <h4><span class="glyphicon glyphicon-user"></span> Developers</h4>
-                    <hr class="style-two">
+                    <hr class="style-two">Team InformAksyon
+                    <ul>
+                        <li>Jesus Nana</li>
+                        <li>Diony Guillen</li>
+                        <li>Rowell Canlapan</li>
+                        <li>Alex Delos Santos</li>
+                    </ul>
                 </div>
                 <div class="col-md-3 col-sm-4 col-xs-6">
                     <h4><span class="glyphicon glyphicon-envelope"></span> Subscribe</h4>
