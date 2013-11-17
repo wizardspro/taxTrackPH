@@ -24,12 +24,6 @@ if (isset($_POST['btn_login']) && !empty($_POST['btn_login'])) {
 ?>
 
 
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -47,52 +41,20 @@ if (isset($_POST['btn_login']) && !empty($_POST['btn_login'])) {
         <link href="assets/css/template.css" rel="stylesheet" media="screen">
     </head>
     <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.php">Tax Track PH</a>
-                </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav navbar-right">    
-                        <li><a href="taxcalc.php">Where's my money?</a></li>
-                        <li><a href="budgetcalc.php">Let me do it</a></li>
-                        <li><a href="releases.php">I'm watching yah</a></li>
-                        <!--li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Username <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                            <li><a href="#">Settings</a></li>
-                            <li><a href="#">Logout</a></li>
-                            </ul>
-                            </li-->
-                        <li><button type="button" class="btn btn-primary navbar-btn login_btn">Log in <span class="glyphicon glyphicon-log-in"></span></button></li>
-                    </ul>
-                </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container -->
-        </nav>
+
+        <?php include "navbar.php" ?>
         
         <div class="container">
             <br><br><br><br>
             <div class="col-md-4 col-md-offset-4 well">
-            <div class="alert alert-danger alert-dismissable">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <?php echo $loginMessage; ?>
-            </div>
+            
+            <?php echo $loginMessage; ?>
 
             <?php if (isset($_SESSION['userInfo']['username']) &&
                 !empty($_SESSION['userInfo']['username'])) : ?>
             Fullname: <?php echo $_SESSION['userInfo']['full_name']; ?><br/>
             Email: <?php echo $_SESSION['userInfo']['email']; ?>
-            <?php else: ?>    
-
+            <?php else: ?> 
             <form role="form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
               <div class="form-group">
                 <label for="username">Username</label>
