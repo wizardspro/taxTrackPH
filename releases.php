@@ -1,10 +1,11 @@
 <?php
-
 session_start();
 
 include 'libs/Database.php';
+include 'libs/kabantayngbayan.php';
 
-
+$kb = new KabantayNgBayan();
+$saro = $kb->get('saro', '&limit=10&skip=' . $_GET['page']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,23 +72,29 @@ include 'libs/Database.php';
 	            		</tr>
 	            	</thead>
 	            	<tbody>
+                        <?php foreach ($saro->data as $v) : ?>
 	            		<tr style="cursor:pointer;" onClick="window.location = 'view.php?id='">
-	            			<td>badm tss badum tss</td>
-	            			<td align="right">P 203209</td>
+	            			<td>
+                                <a href="view.php?id=<?php echo $v->id; ?>">
+                                    <?php echo $v->description; ?>
+                                </a>
+                             </td>
+	            			<td align="right">Php
+                                <?php echo number_format($v->amount, 2); ?></td>
 	            		</tr>
-
+                        <?php endforeach; ?>
 	            	</tbody>
 	            </table>
             </div>
             <div class="text-right">
             	<ul class="pagination">
-				  <li><a href="#">&laquo;</a></li>
-				  <li><a href="releases.php?page=1">1</a></li>
-				  <li><a href="#">2</a></li>
-				  <li><a href="#">3</a></li>
-				  <li><a href="#">4</a></li>
-				  <li><a href="#">5</a></li>
-				  <li><a href="#">&raquo;</a></li>
+				  <li><a href="releases.php?page=<?php echo $_GET['page']-10; ?>">&laquo;</a></li>
+				  <li><a href="releases.php?page=10">1</a></li>
+				  <li><a href="releases.php?page=20">2</a></li>
+				  <li><a href="releases.php?page=30">3</a></li>
+				  <li><a href="releases.php?page=40">4</a></li>
+				  <li><a href="releases.php?page=50">5</a></li>
+				  <li><a href="releases.php?page=<?php echo $_GET['page']+10; ?>">&raquo;</a></li>
 				</ul>
 	        </div>
         </div>
