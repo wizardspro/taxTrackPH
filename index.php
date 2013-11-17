@@ -1,3 +1,7 @@
+<?php
+
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -24,22 +28,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Tax Track PH</a>
+                    <a class="navbar-brand" href="index.php">Tax Track PH</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav navbar-right">	
-                        <li><a href="taxcalc.html">Where's my money?</a></li>
-                        <li><a href="budgetcalc.html">Let me do it</a></li>
-                        <li><a href="releases.html">I'm watching yah</a></li>
-                        <!--li class="dropdown">
+                        <li><a href="taxcalc.php">Where's my money?</a></li>
+                        <li><a href="budgetcalc.php">Let me do it</a></li>
+                        <li><a href="releases.php">I'm watching yah</a></li>
+                        <?php if (isset($_SESSION['userInfo']['username']) &&
+                			!empty($_SESSION['userInfo']['username'])) : ?>
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Username <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                             <li><a href="#">Settings</a></li>
-                            <li><a href="#">Logout</a></li>
+                            <li><a href="logout.php">Logout</a></li>
                             </ul>
-                            </li-->
-                        <li><button type="button" class="btn btn-primary navbar-btn login_btn">Log in <span class="glyphicon glyphicon-log-in"></span></button></li>
+                            </li>
+                            <?php else: ?>   
+                        <li><button onClick="window.location = 'login.php'" type="button" class="btn btn-primary navbar-btn login_btn">Log in <span class="glyphicon glyphicon-log-in"></span></button></li>
+                    <?php endif; ?>   
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -56,14 +64,14 @@
                     <img style="width: 140px; height: 140px;" class="img-round" src="assets/img/con-256.png" data-src="holder.js/140x140" alt="140x140">
                     <h2>Make Donations</h2>
                     <p>The quick brown fox jumps over the lazy dogs.</p>
-                    <p><a class="btn btn-default" href="about-donations.html">View details »</a></p>
+                    <p><a class="btn btn-default" href="about-donations.php">View details »</a></p>
                 </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-md-4 text-center">
                     <img style="width: 140px; height: 140px;" class="img-round" src="assets/img/yt.png" data-src="holder.js/140x140" alt="140x140">
                     <h2>Share Knowledge</h2>
                     <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                    <p><a class="btn btn-default" href="about-channels.html">View details »</a></p>
+                    <p><a class="btn btn-default" href="about-channels.php">View details »</a></p>
                 </div>
                 <!-- /.col-lg-4 -->
                 <div class="col-md-4 text-center">
@@ -96,6 +104,42 @@
             <br>
         </div>
         <!-- /container -->
+
+<!-- disqus plugin -->
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'taxtrackph'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    
+
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'taxtrackph'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+
+
+
         <div class="footerBanner">
             <div class="container" style="height:230px;">
                 <div class="col-md-3 col-sm-4 col-xs-6">

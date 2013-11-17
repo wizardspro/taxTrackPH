@@ -42,14 +42,18 @@ $data = $saro->data[0];
                         <li><a href="taxcalc.php">Where's my money?</a></li>
                         <li><a href="budgetcalc.php">Let me do it</a></li>
                         <li><a href="releases.php">I'm watching yah</a></li>
-                        <!--li class="dropdown">
+                        <?php if (isset($_SESSION['userInfo']['username']) &&
+                            !empty($_SESSION['userInfo']['username'])) : ?>
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Username <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                             <li><a href="#">Settings</a></li>
-                            <li><a href="#">Logout</a></li>
+                            <li><a href="logout.php">Logout</a></li>
                             </ul>
-                            </li-->
-                        <li><button type="button" class="btn btn-primary navbar-btn login_btn">Log in <span class="glyphicon glyphicon-log-in"></span></button></li>
+                            </li>
+                            <?php else: ?>
+                        <li><button onClick="window.location = 'login.php'" type="button" class="btn btn-primary navbar-btn login_btn">Log in <span class="glyphicon glyphicon-log-in"></span></button></li>
+                    <?php endif; ?>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -62,10 +66,17 @@ $data = $saro->data[0];
         </div>
         <div class="container" id='site_content'>
         	<div class="col-md-4 well">
-                <input type="radio" id="radio_positive" name="comment_status" checked>
-                <label for="radio_positive">Positive</label>
-                <input type="radio" id="radio_negative" name="comment_status">
-                <label for="radio_negative">Negative</label>
+                <div class="pull-right">
+                    <input type="radio" id="radio_positive" name="comment_status" checked>
+                    <span class="label label-success">Positive</span>
+                    <input type="radio" id="radio_negative" name="comment_status">
+                    <span class="label label-danger">Negative</span>
+                </div>
+                <label for="textarea_comment" class="pull-left">Message </label>
+                <br><br>
+                <textarea name="textarea_comment" id="textarea_comment" class="form-control" rows="3"></textarea>
+                <br>
+                <button class="btn btn-primary">Send</button>
         	</div>
         	<div class="col-md-8" style="max-height:400px;overflow:auto;">
 	            <table class="table table-bordered">

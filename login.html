@@ -1,35 +1,3 @@
-<?php
-
-session_start();
-
-include 'libs/Database.php';
-
-$loginMessage = "";
-
-if (isset($_POST['btn_login']) && !empty($_POST['btn_login'])) {
-
-    $db = new Database($dbConf['host'], $dbConf['user'], '', $dbConf['dbname']);
-
-    $userInfo['username'] = $_POST['username'];
-    $userInfo['password'] = $_POST['password'];
-
-    if ($db->authenticate($userInfo)) {
-        $_SESSION['userInfo'] = $db->getUserInfo();
-        header('location: ' . $_SERVER['PHP_SELF']);
-        exit;
-    } else {
-        $loginMessage = "Authentication Failed: Please login again.";
-    }
-}
-?>
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -56,14 +24,14 @@ if (isset($_POST['btn_login']) && !empty($_POST['btn_login'])) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php">Tax Track PH</a>
+                    <a class="navbar-brand" href="index.html">Tax Track PH</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav navbar-right">    
-                        <li><a href="taxcalc.php">Where's my money?</a></li>
-                        <li><a href="budgetcalc.php">Let me do it</a></li>
-                        <li><a href="releases.php">I'm watching yah</a></li>
+                    <ul class="nav navbar-nav navbar-right">	
+                        <li><a href="taxcalc.html">Where's my money?</a></li>
+                        <li><a href="budgetcalc.html">Let me do it</a></li>
+                        <li><a href="releases.html">I'm watching yah</a></li>
                         <!--li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Username <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -83,30 +51,23 @@ if (isset($_POST['btn_login']) && !empty($_POST['btn_login'])) {
             <br><br><br><br>
             <div class="col-md-4 col-md-offset-4 well">
             <div class="alert alert-danger alert-dismissable">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-              <?php echo $loginMessage; ?>
-            </div>
+			  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			  <strong>Warning!</strong> Best check yo self, you're not looking too good.
+			</div>
 
-            <?php if (isset($_SESSION['userInfo']['username']) &&
-                !empty($_SESSION['userInfo']['username'])) : ?>
-            Fullname: <?php echo $_SESSION['userInfo']['full_name']; ?><br/>
-            Email: <?php echo $_SESSION['userInfo']['email']; ?>
-            <?php else: ?>    
-
-            <form role="form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-              <div class="form-group">
-                <label for="username">Username</label>
-                <input name="username" value="" class="form-control" id="username"
-                 placeholder="username">
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password"
-                name="password" placeholder="Password">
-              </div>
-              <input type="submit" name="btn_login" value="Login" class="btn btn-primary">
-                </form>
-            <?php endif; ?>
+            <form role="form">
+			  <div class="form-group">
+			    <label for="username">Username</label>
+			    <input type="text" class="form-control" id="username" placeholder="username" name="username">
+			  </div>
+			  <div class="form-group">
+			    <label for="password">Password</label>
+			    <input type="password" class="form-control" id="password"
+			    name="password" placeholder="Password">
+			  </div>
+			  
+			  <button type="submit" class="btn btn-primary">Submit</button>
+			</form>
 
             </div>
         </div>
