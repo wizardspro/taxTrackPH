@@ -71,41 +71,42 @@
                                 <th class="col-md-3 text-center">New</th>
                             </tr>
                         </thead>
+                        <form method="post" action"" id="theForm"></form>
                         <tbody>
                             <tr>
                                 <td>Social Services</td>
                                 <td align="center"> P 1221 (37.2%)</td>
-                                <td><input type="number" min="0.00" step="0.01" max="100.00" value="0" id="SS" class="form-control"></td>
-                                <td align="center">P 1232</td>
+                                <td><input type="number" min="0.00" step="0.01" max="100.00" value="0" id="SS" class="form-control" onKeyUp="changeAll()"></td>
+                                <td align="center" id="ss_value">P 0</td>
                             </tr>
                             <tr>
                                 <td>Economic Services</td>
                                 <td align="center"> P 1221 (26.0%)</td>
-                                <td><input type="number" min="0.00" step="0.01" max="100.00" value="0" id="ES" class="form-control"></td>
-                                <td align="center">P 1232</td>
+                                <td><input type="number" min="0.00" step="0.01" max="100.00" value="0" id="ES" class="form-control" onKeyUp="changeAll()"></td>
+                                <td align="center" id="es_value">P 0</td>
                             </tr>
                             <tr>
                                 <td>General Public Services</td>
                                 <td align="center"> P 1221 (16.1%)</td>
-                                <td><input type="number" min="0.00" step="0.01" max="100.00" value="0" id="GPS" class="form-control"></td>
-                                <td align="center">P 1232</td>
+                                <td><input type="number" min="0.00" step="0.01" max="100.00" value="0" id="GPS" class="form-control" onKeyUp="changeAll()"></td>
+                                <td align="center" id="gps_value">P 0</td>
                             </tr>
                             <tr>
                                 <td>Debt Burden</td>
                                 <td align="center"> P 1221 (16.6%)</td>
-                                <td><input type="number" min="0.00" step="0.01" max="100.00" value="0" id="DB" class="form-control"></td>
-                                <td align="center">P 1232</td>
+                                <td><input type="number" min="0.00" step="0.01" max="100.00" value="0" id="DB" class="form-control" onKeyUp="changeAll()"></td>
+                                <td align="center" id="db_value">P 0</td>
                             </tr>
                             <tr>
                                 <td>Defense</td>
                                 <td align="center"> P 1221 (4.1%)</td>
-                                <td><input type="number" min="0.00" step="0.01" max="100.00" value="0" id="D" class="form-control"></td>
-                                <td align="center">P 1232</td>
+                                <td><input type="number" min="0.00" step="0.01" max="100.00" value="0" id="D" class="form-control" onKeyUp="changeAll()"></td>
+                                <td align="center" id="d_value">P 0</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <button class="btn btn-primary">Submit</button>
+                <button class="btn btn-primary" form="theForm" id="submit_btn">Submit</button>
             </div>
         </div>
         <br><br>
@@ -135,7 +136,7 @@
                   ['Economic Services',  26.0,      26.1],
                   ['General Public Services',  16.2,      16],
                   ['Dept Burden',  16.6,      20],
-                  ['Defense',  4.1,      3],
+                  ['Defense',  4.1,     12],
                 ]);
 
                 var options = {
@@ -146,14 +147,14 @@
                 var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
                 chart.draw(data, options);
               }
-              function drawChart2() {
+              function drawChart2(e_ss , e_es , e_gps , E_db , e_d ) {
                 var data = google.visualization.arrayToDataTable([
                   ['Departments', 'Actual', 'Citizens','User'],
-                  ['Social Services',  37.2, 30.4, 30.4],
-                  ['Economic Services',  26.0,      26.1, 30.4],
-                  ['General Public Services',  16.2,      16, 30.4],
-                  ['Dept Burden',  16.6,      20, 30.4],
-                  ['Defense',  4.1, 3, 30.4],
+                  ['Social Services',  37.2, 30.4, e_ss],
+                  ['Economic Services',  26.0,      26.1, e_es],
+                  ['General Public Services',  16.2,      16, e_gps],
+                  ['Dept Burden',  16.6,      20, e_db],
+                  ['Defense',  4.1, 3, e_d]
 
                 ]);
 
@@ -165,12 +166,28 @@
                 var chart = new google.visualization.BarChart(document.getElementById('chart_div2'));
                 chart.draw(data, options);
               }
-              $('#SS').change(function(){
-                total = parseInt($('#SS').value) + 
-                parseInt($('#ES').value) + parseInt($('#GPS').value) + 
-                parseInt($('#DB').value) + parseInt($('#D').value);
-                alert(total);
-              });
+              function changeAll(){
+                ss = parseInt($('#SS').val());
+                es = parseInt($('#ES').val());
+                gps = parseInt($('#GPS').val());
+                db = parseInt($('#DB').val());
+                d = parseInt($('#D').val());
+                t = 2300000000000;
+                total = ss + es + gps +  db + d;
+                if(total>100){
+                    $("#submit_btn").hide();
+                }else{
+                    $("#submit_btn").show();
+                    $('#ss_value').text(t*(ss/100));
+                    $('#es_value').text(t*(es/100));
+                    $('#gps_value').text(t*(gps/100));
+                    $('#db_value').text(t*(db/100));
+                    $('#d_value').text(t*(d/100));
+                    drawChart2(129090,129090678,456,65445,654654) {
+                }
+                
+
+              };
         </script>
     </body>
 </html>
